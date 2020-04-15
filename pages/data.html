@@ -38,7 +38,7 @@
 			<div class="navbar-brand">
 				<!-- TODO: Change link to repository homepage if needed -->
 				<!-- TODO: Change which navbar-item is-active if needed -->
-				<a class="navbar-item is-active" href="index.html">
+				<a class="navbar-item is-active" href="../index.html">
 					<span class="icon"><i class="fas fa-home"></i></span>
 					<span>Home</span>
 				</a>
@@ -53,7 +53,7 @@
 			<div id="main-menu" class="navbar-menu has-text-weight-medium">
 				<!-- Left navbar items -->
 				<div class="navbar-start">
-					<a class="navbar-item" href="./pages/data.html" title="Data">
+					<a class="navbar-item" href="data.html" title="Data">
 						<span class="icon"><i class="fas fa-table"></i></span>
 						<span>Data</span>
 					</a>
@@ -66,7 +66,7 @@
 
 						<div class="navbar-dropdown">
 							<a class="navbar-item"
-							   href="./pages/prototype.html" >
+							   href="prototype.html" >
 								<span class="icon"><i class="fas fa-chart-line"></i></span>
 								<span>Prototype</span>
 							</a>
@@ -74,7 +74,7 @@
 							<hr class="navbar-divider">
 
 							<a class="navbar-item"
-							   href="./pages/viz.html">
+							   href="viz.html">
 								<span class="icon"><i class="fas fa-map"></i></span>
 								<span>Visualization</span>
 							</a>
@@ -85,7 +85,7 @@
 				<!-- Right navbar items -->
 				<div class="navbar-end">
 
-					<a class="navbar-item" href="./pages/about.html" title="About">
+					<a class="navbar-item" href="about.html" title="About">
 						<span class="icon"><i class="fas fa-info-circle"></i></span>
 						<span>About</span>
 					</a>
@@ -105,18 +105,31 @@
 		<div class="container">
 			<!-- Begin page content -->
 			<div class="content">
-				<h1 class="title">
-					<!-- TODO: Change page title -->
-					 Narrative
-				</h1>
-				<p class="subtitle">
-					<!-- TODO: Change page subtitle -->
-					Visualizations Built Using the Arms Transfers Database
-				</p>
+				<h1 class="title" id="data">Data</h2>
 
-				<p>The goal of this project is to provide insight into the arms deals that the United States has been a part of, primarily over the past 20 years. My goal is to see any trends in the data, as well as any potential outliers. In particular, I will look in shifts in the data after September 2001, or in more recent times, and correlate it to real world events. </p>
+				<p> My dataset is provided to me by the International Peace Research Institute. As mentioned elsewhere, it contains information on every major international arms deal, going back to 1950. While I cannot easily see the size of the entire dataset, when looking at just arms deals supplied by the United state since 2000, there is around 400kb of data. The dataset itself is available <a href="https://www.sipri.org/databases/armstransfers">here</a>. The license is as follows:</p>
 
-				<p>One of the main reasons that I chose this dataset is because of the rich amount of context and details that it provides. In particular, I believe that interactivity will be a key part of my visualization. Because there are so many years of data, I hope to and either a secondary visualization, or an animation to convey the passage of time. </p>
+				<blockquote>
+					<p>
+						Fair use of SIPRI content is defined as
+						<ul>
+							<li>
+								the excerption of SIPRI copyrighted material for such purposes as criticism, comment, news reporting, teaching, scholarship or research in which the use is for non-commercial purposes 
+							</li>
+							<li>
+								the reproduction of less than 10 per cent of a published data set. 
+							</li>
+						</ul>
+						NB: Both the above conditions must apply to count as fair use. <br> Fair use is freely authorized as long as due reference is given to the specific SIPRI source(s).
+					</p>
+					<cite><a href="https://www.sipri.org/about/terms-and-conditions">Full Text</a></cite>
+				</blockquote>
+
+				<p>In working with this dataset, I believe that there will be a couple of issues that I will have to overcome. Namely, there are two main ways to interact with this data, one of which allows you to get aggregate information on all Suppliers / Recipients. However, to get more detailed information, I believe I will need to use their other tool, which allows me to get details about each individual transfer for a given Supplier / Recipient. To get the more detailed information that I'd like to use in my visualization, I may have look at each relevant transaction record. However, this does add another layer of difficulties to the visualization. This data is given to me in a rtf format, instead of a more traditional csv. So, I will likely need to do a fair about of data cleaning to get all the relevant information.</p>
+
+				<h3 id="wrangling">Wrangling</h3>
+
+				<p>No wrangling has been preformed on the data yet, however I am expecting to have to preform some sort of data cleaning and formatting to make the data easier to work with. Once I have more details, I will fill this section out further. </p>
 
 			</div>
 			<!-- End page content -->
