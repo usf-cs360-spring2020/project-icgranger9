@@ -1,6 +1,6 @@
 # README
 
-**Link** <https://usf-cs360-spring2020.github.io/project-icgranger9/index.html>
+**Link:** <https://usf-cs360-spring2020.github.io/project-icgranger9/index.html>
 
 <img src="https://usf-cs360-spring2020.github.io/web-icgranger9/granger_profile.jpg" width="256px">
 
