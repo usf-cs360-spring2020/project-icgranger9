@@ -13,6 +13,14 @@
 
 		<!-- Load Font Awesome 5 (free) icons -->
 		<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+		<!-- include d3.js v5 -->
+		<script src="https://d3js.org/d3.v5.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+
+		<!-- Custom JS and CSS-->
+		<script src="../js/final.js"></script>
+		<link href="../css/final.css" rel="stylesheet" type="text/css">
 	</head>
 
 	<body>
@@ -117,10 +125,44 @@
 				</h1>
 				<p class="subtitle">
 					<!-- TODO: Change page subtitle -->
-					TBD
 				</p>
 
-				<p>This page is under  development, and will be populated once I have started work on my D3 implementation.</p>
+				<p>For this Implementation, my goal was to answer the question "When looking at US weapons exports from 2000 - 2019, are we able to see any trends that may indicate changes in the global political climate". While this is a fairly detailed question, my visualization uses a choropleth map to break it down using a few different types of encoding. The first encoding is the map itself, which shows what region of the world the US exported weapons too. From there, we use color to convey how many unique deals the United States has with each country. And finally, in the details on demand I included a line chart of weapons deals with any given country. </p>
+
+				<p>One I was able to look at the still visualization, I was able to see some insights, such as US allies that have a higher amount of exports, including South Korea or Egypt. Interestingly, there are also some countries that have tense relations with the United States, which have no exports. These are insights that are unique to this particular visualization. </p>
+
+				<h2 id="visualizations">D3 Implementation</h2>
+
+					<!-- Initialize a select button -->
+					<select id="selectButton">
+						<option value="all">All Categories</option>
+						<option value="aircraft">Aircraft</option>
+						<option value="air defense system">Air Defense System</option>
+						<option value="artillery">Artillery</option>
+						<option value="armoured vehicles">Armoured Vehicles</option>
+						<option value="engines">Engines</option>
+						<option value="sensors">Sensors</option>
+						<option value="missiles">Missiles</option>
+						<option value="naval weapons">Naval Weapons</option>
+						<option value="ships">Ships</option>
+						<option value="other">Other</option>
+					</select>
+
+					<figure>
+						<svg width="1260" height="800" id="vis">
+							<g id="legend"></g>
+							<g id="basemap"></g>
+
+							<!-- turn off pointer events for certain groups -->
+							<g id="outline" pointer-events="none"></g>
+							<g id="details" pointer-events="none"></g>
+						</svg>
+
+						<figcaption>
+							Created By: Ian Granger <br>
+							Data Source: <a href="https://data.sfgov.org/City-Infrastructure/311-Cases/vw6y-z8j6/">311 Cases</a> (<a href="https://data.sfgov.org/Geographic-Locations-and-Boundaries/SF-Find-Neighborhoods/pty2-tcw4">Neighborhoods</a>)
+						</figcaption>
+					</figure>
 
 			</div>
 			<!-- End page content -->
@@ -179,6 +221,11 @@
 	});
 	</script>
 	<!-- End mobile menu responsiveness -->
+
+	<script type="text/javascript">
+		// Actually call the function to draw the map.
+		createChoropleth();
+	</script>
 	</body>
 
 </html>

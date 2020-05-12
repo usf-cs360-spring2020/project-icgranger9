@@ -1,0 +1,52 @@
+#tooltip {
+  font-weight: 600;
+  text-shadow: 0px 0px 2px white;
+
+  fill: black;
+  stroke: none;
+}
+
+#detailsTable{
+	font-size: small;
+	width: auto;
+
+	background: rgba(221, 221, 221, .75);
+	border-radius: 10px;
+
+}
+
+svg#nested_vis {
+  background: rgba(221, 221, 221, .75);
+  border-radius: 10px;
+}
+
+
+/* svg elements are styled differently from html elements */
+path.land {
+  stroke: none;
+}
+
+path.country {
+  fill: none;
+  stroke: darkgrey;
+  stroke-width: 1px;  /* Either 1 or 2 px looks good */
+  pointer-events: none;
+}
+
+
+.active {
+  stroke: #414a4c !important;
+  stroke-width: 1px !important;
+}
+
+circle.symbol {
+  fill-opacity: 0.6;
+
+  stroke: white;
+  stroke-width: 1px;
+}
+
+
+text.legendTitle {
+	font-size:medium !important;
+}
