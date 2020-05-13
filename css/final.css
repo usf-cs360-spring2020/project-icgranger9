@@ -6,18 +6,13 @@
   stroke: none;
 }
 
-#detailsTable{
-	font-size: small;
-	width: auto;
-
-	background: rgba(221, 221, 221, .75);
-	border-radius: 10px;
-
-}
-
-svg#nested_vis {
+.details {
   background: rgba(221, 221, 221, .75);
   border-radius: 10px;
+}
+
+.details > h1 {
+  margin-bottom: 5px;
 }
 
 
@@ -37,16 +32,4 @@ path.country {
 .active {
   stroke: #414a4c !important;
   stroke-width: 1px !important;
-}
-
-circle.symbol {
-  fill-opacity: 0.6;
-
-  stroke: white;
-  stroke-width: 1px;
-}
-
-
-text.legendTitle {
-	font-size:medium !important;
 }

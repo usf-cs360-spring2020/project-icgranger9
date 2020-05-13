@@ -38,7 +38,7 @@
 			<div class="navbar-brand">
 				<!-- TODO: Change link to repository homepage if needed -->
 				<!-- TODO: Change which navbar-item is-active if needed -->
-				<a class="navbar-item is-active" href="index.html">
+				<a class="navbar-item is-active" href="../index.html">
 					<span class="icon"><i class="fas fa-home"></i></span>
 					<span>Home</span>
 				</a>
@@ -53,12 +53,12 @@
 			<div id="main-menu" class="navbar-menu has-text-weight-medium">
 				<!-- Left navbar items -->
 				<div class="navbar-start">
-					<a class="navbar-item" href="./pages/data.html" title="Data">
+					<a class="navbar-item" href="./data.html" title="Data">
 						<span class="icon"><i class="fas fa-table"></i></span>
 						<span>Data</span>
 					</a>
 
-					<a class="navbar-item" href="./pages/feedback.html" title="Data">
+					<a class="navbar-item" href="#feedback" title="Data">
 						<span class="icon"><i class="fas fa-user-friends"></i></span>
 						<span>Feedback</span>
 					</a>
@@ -71,13 +71,13 @@
 
 						<div class="navbar-dropdown">
 							<a class="navbar-item"
-							   href="./pages/alpha.html" >
+							   href="./alpha.html" >
 								<span class="icon"><i class="fas fa-chart-line"></i></span>
 								<span> Alpha Prototype</span>
 							</a>
 
 							<a class="navbar-item"
-							   href="./pages/beta.html" >
+							   href="./beta.html" >
 								<span class="icon"><i class="fas fa-chart-line"></i></span>
 								<span> Beta Prototype</span>
 							</a>
@@ -85,7 +85,7 @@
 							<hr class="navbar-divider">
 
 							<a class="navbar-item"
-							   href="./pages/final.html">
+							   href="./final.html">
 								<span class="icon"><i class="fas fa-map"></i></span>
 								<span>Final Visualization</span>
 							</a>
@@ -118,16 +118,24 @@
 			<div class="content">
 				<h1 class="title">
 					<!-- TODO: Change page title -->
-					 Narrative
+					 Peer Feedback
 				</h1>
-				<p class="subtitle">
-					<!-- TODO: Change page subtitle -->
-					Visualizations Built Using the Arms Transfers Database
-				</p>
 
-				<p>The goal of this project is to provide insight into the arms deals that the United States has been a part of, primarily over the past 20 years. My goal is to see any trends in the data, as well as any potential outliers. In particular, I will look in shifts in the data after September 2001, or in more recent times, and correlate it to real world events. </p>
+				<p>The feedback from my peers was generally positive, however there were a points of improvement that my peers pointed out. The first piece of helpful advice was "the map has a certain amount of lie factor because of missing labels which can be clearly covered up by interactivity". This was a huge issue with my initial prototypes, that it was unclear what country a viewer was looking at. Another piece of feedback that I got was "the visualization has a good start however the lie factor would be in the projected map as the world map would create more bias on a country that has a bigger size rather than on the actual color encoded value". Unfortunately, this is a known issue with chloroplath maps, and something that I was unable to do much about.</p>
 
-				<p>One of the main reasons that I chose this dataset is because of the rich amount of context and details that it provides. In particular, I believe that interactivity will be a key part of my visualization. Because there are so many years of data, I chose to implement a secondary visualization, when you hover over a give country, to see this rich historical data.</p>
+				<h3>
+					<!-- TODO: Change page title -->
+					 Instructor Feedback
+				</h3>
+
+				<p>The feedback that I got from Sophie was extremely helpful. She suggested that instead of two types of filtering, which I had initially planned, that I use the additional details for another visualization. She had two different ideas on how to achieve this. The first was to have two completely separate visualizations, a map and a bar or line chart, with connected interactivity, so that clicking or hovering over a part of the map would update the bar chart. Her other suggestion was to have a secondary chart in the details on demand.</p>
+
+				<h5>
+					<!-- TODO: Change page title -->
+					 Changes
+				</h5>
+
+				<p>Given the peer and instructor feedback, I knew there were details of my implementation that I needed to iron out. After the instructors feedback in particular, I had a direction to go. However, I was unsure of which suggestion was best. My initial inclination was to implement two completely separate visualizations, and link them with interactivity. However, after some basic prototyping I began to realize that this approach took up significant screen space, and in the end I decided it was too large. On the other hand, I initially had the opposite concern (that it would be too small), but in the end I think this turned out to be the best approach.</p>
 
 			</div>
 			<!-- End page content -->

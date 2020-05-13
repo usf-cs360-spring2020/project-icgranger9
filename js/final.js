@@ -24,7 +24,7 @@ let createChoropleth = function() {
 	const details = g.details.append("foreignObject")
 		.attr("id", "details")
 		.attr("width", 400)
-		.attr("height", 200)
+		.attr("height", 250)
 		.attr("dx", -5)
 		.attr("dy", -5)
 		.attr("x", 0)
@@ -112,6 +112,7 @@ let createChoropleth = function() {
 		d3.json(files.basemap).then(drawMap);
 
 		// Finally, draw the legend
+		// NOTE: I chose not to do this, because I wasn't sure it would update when the the map was filtered.
 		// drawLegend(color)
 	});
 
@@ -166,15 +167,25 @@ let createChoropleth = function() {
 		//Add details on demand
 		basemap.on("mouseover.details", function(d) {
 
+			// Update the HTML, to include the coutry's name
+			// Also clears any previous details
+			const html = `
+				<div class="details">
+					<h1>${d.properties.name}</h1>
+					<svg width="400" height="200" id="nested_vis"></svg>
+				</div>
+			`;
+
+			body.html(html);
+
 			// Clear what was there before
 			var nested_svg = d3.select("svg#nested_vis");
-			nested_svg.selectAll("*").remove();
 
 			// get the relevant data
 			let nested_data = deliveryCounts.get(currCategory).get(d.properties.name)
 
 			// No data for this country, so no details
-			if (!nested_data){
+			if (!nested_data || nested_data.keys().length == 1){
 				return;
 			}
 
@@ -228,7 +239,7 @@ let createChoropleth = function() {
 
 		// Add filtering
 		d3.select("#selectButton").on("change", function(d) {
-		// recover the option that has been chosen
+			// recover the option that has been chosen
 			var selectedOption = d3.select(this).property("value")
 
 			currCategory = selectedOption;
@@ -245,7 +256,6 @@ let createChoropleth = function() {
 						return color(deliveryCounts.get(currCategory).get("raw_count").get(country));
 					}
 
-					// console.log(country);
 					return "#F5F5F5";
 				})
 		})

@@ -27,7 +27,7 @@
 
 	<!-- Page header -->
 	<!-- https://bulma.io/documentation/layout/hero/ -->
-	<section class="hero is-primary is-bold">
+	<section class="hero is-warning is-bold">
 		<div class="hero-body">
 			<div class="container">
 				<!-- TODO: Change title -->
@@ -61,9 +61,14 @@
 			<div id="main-menu" class="navbar-menu has-text-weight-medium">
 				<!-- Left navbar items -->
 				<div class="navbar-start">
-					<a class="navbar-item" href="data.html" title="Data">
+					<a class="navbar-item" href="./data.html" title="Data">
 						<span class="icon"><i class="fas fa-table"></i></span>
 						<span>Data</span>
+					</a>
+
+					<a class="navbar-item" href="./feedback.html" title="Data">
+						<span class="icon"><i class="fas fa-user-friends"></i></span>
+						<span>Feedback</span>
 					</a>
 
 					<!-- TODO: Modify or remove dropdown -->
@@ -124,45 +129,52 @@
 					Final Visualization
 				</h1>
 				<p class="subtitle">
-					<!-- TODO: Change page subtitle -->
+					Encoding + Interactivity
 				</p>
 
-				<p>For this Implementation, my goal was to answer the question "When looking at US weapons exports from 2000 - 2019, are we able to see any trends that may indicate changes in the global political climate". While this is a fairly detailed question, my visualization uses a choropleth map to break it down using a few different types of encoding. The first encoding is the map itself, which shows what region of the world the US exported weapons too. From there, we use color to convey how many unique deals the United States has with each country. And finally, in the details on demand I included a line chart of weapons deals with any given country. </p>
+				<p>For this Implementation, my goal was to answer the question "When looking at US weapons exports from 2000 - 20209, are we able to see any trends that may indicate changes in the global political climate". While this is a fairly detailed question, my visualization uses a choropleth map to break it down using a few different types of encoding. The first encoding is the map itself, which shows what region of the world the US exported weapons too. I then use color to indicate how many arms deals we have with any give country.</p>
 
-				<p>One I was able to look at the still visualization, I was able to see some insights, such as US allies that have a higher amount of exports, including South Korea or Egypt. Interestingly, there are also some countries that have tense relations with the United States, which have no exports. These are insights that are unique to this particular visualization. </p>
+				<p>Now, on to my interactivity, which I believe is where my visualization shines. My first form of interactivity is a drop-down, which allows you to filter the data by the different type of weapon exports. This will then update the color encoding of the map, to reflect the number arms deals of that particular type. My other interactivity comes in the form of some details on demand. The first detail that we provide is a simple highlighting of a country when you hover over it. On top of this, the most visually impactful part of my visualization is a line chart that I included in the tooltip when you hover over any country that we have had arms deals with. This line chart shows how many arms deals we have had with that particular county for each year since 2000, using the "year delivered" as our x axis, and a count of all exports in a given year as the y axis. This enables us to see some trends in the data, and draw more relevant conclusions. And obviously, this takes into account the filter, to show only the arms deals that are relevant.</p>
+
+
 
 				<h2 id="visualizations">D3 Implementation</h2>
 
-					<!-- Initialize a select button -->
-					<select id="selectButton">
-						<option value="all">All Categories</option>
-						<option value="aircraft">Aircraft</option>
-						<option value="air defense system">Air Defense System</option>
-						<option value="artillery">Artillery</option>
-						<option value="armoured vehicles">Armoured Vehicles</option>
-						<option value="engines">Engines</option>
-						<option value="sensors">Sensors</option>
-						<option value="missiles">Missiles</option>
-						<option value="naval weapons">Naval Weapons</option>
-						<option value="ships">Ships</option>
-						<option value="other">Other</option>
-					</select>
+				<!-- Initialize a select button -->
+				<select id="selectButton">
+					<option value="all">All Categories</option>
+					<option value="aircraft">Aircraft</option>
+					<option value="air defense system">Air Defense System</option>
+					<option value="artillery">Artillery</option>
+					<option value="armoured vehicles">Armoured Vehicles</option>
+					<option value="engines">Engines</option>
+					<option value="sensors">Sensors</option>
+					<option value="missiles">Missiles</option>
+					<option value="naval weapons">Naval Weapons</option>
+					<option value="ships">Ships</option>
+					<option value="other">Other</option>
+				</select>
 
-					<figure>
-						<svg width="1260" height="800" id="vis">
-							<g id="legend"></g>
-							<g id="basemap"></g>
+				<figure>
+					<svg width="1260" height="800" id="vis">
+						<g id="legend"></g>
+						<g id="basemap"></g>
 
-							<!-- turn off pointer events for certain groups -->
-							<g id="outline" pointer-events="none"></g>
-							<g id="details" pointer-events="none"></g>
-						</svg>
+						<!-- turn off pointer events for certain groups -->
+						<g id="outline" pointer-events="none"></g>
+						<g id="details" pointer-events="none"></g>
+					</svg>
 
-						<figcaption>
-							Created By: Ian Granger <br>
-							Data Source: <a href="https://data.sfgov.org/City-Infrastructure/311-Cases/vw6y-z8j6/">311 Cases</a> (<a href="https://data.sfgov.org/Geographic-Locations-and-Boundaries/SF-Find-Neighborhoods/pty2-tcw4">Neighborhoods</a>)
-						</figcaption>
-					</figure>
+					<figcaption>
+						Created By: Ian Granger <br>
+						Data Source: <a href="https://data.sfgov.org/City-Infrastructure/311-Cases/vw6y-z8j6/">International Peace Research Institute</a> (<a href="https://www.naturalearthdata.com/about/terms-of-use/">World Map</a>)
+					</figcaption>
+				</figure>
+
+				<h2>
+					Findings
+				</h2>
+				<p>Once I was able to look at the final visualization, I could see some insights that were brouth out by my visualization and interactivity. For example, when looking at the interactivity, the year-over-year  nature allows us to see some historical trends, such as the noticeable drop in weapons exports in the year 2001 and shortly after. Obviously, this is a very visible impact of the events of 9/11, and it can be seen pretty much across the board (for a specific example, look at Brazil). Another insight that the map itself provides is to see who the united states is willing to provide weapons to, such as US allies that have a higher amount of exports, including South Korea or Egypt. Interestingly, there are also some countries that have tense relations with the United States, which have no exports. These are insights that are unique to this particular visualization. </p>
 
 			</div>
 			<!-- End page content -->
